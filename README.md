@@ -71,4 +71,27 @@ docs: https://resend.com/docs/introduction
  ----
 
  lect 6 : Crash course on Next Auth or Authjs
+ https://next-auth.js.org/
+ NextAuth.js is becoming Auth.js! 
+
+ So : https://authjs.dev/?_gl=1*1ssrx9w*_gcl_au*NDM3OTQyNjc1LjE3MjE3OTU5MjA.
+ npm install next-auth@beta
+ npm install next-auth
+
+ create /app/api/auth/[...nextauth]/route.ts and option.ts
+
+
+complete option.ts and route.ts in nextauth folder
+
+ create next-auth.d.ts in types, here we have updated the interface of user, session , jwt
+ so that we can match it in route.ts in [nextauth]
+ 
+
+ complete middleware.ts in src
+
+ create (auth)/sign-in/page.ts in src/app
+
+ create context/AuthProvider.tsx
+ wrap body in layout in <AuthProvider>
+
 
