@@ -59,3 +59,16 @@ docs: https://resend.com/docs/introduction
  npm i bcryptjs
  npm i --save-dev @types/bcryptjs
 
+ ---
+
+
+ LEct 5: Signup user and custom OTP in NextJS
+
+ complete route.ts in api/signUp
+
+
+
+ ----
+
+ lect 6 : Crash course on Next Auth or Authjs
+
