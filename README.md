@@ -95,3 +95,10 @@ complete option.ts and route.ts in nextauth folder
  wrap body in layout in <AuthProvider>
 
 
+ ----
+ lect 7 : unique username check in nextjs
+
+ npm install @react-email/components
+
+
+
