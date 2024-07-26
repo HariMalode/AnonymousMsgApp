@@ -102,5 +102,18 @@ complete option.ts and route.ts in nextauth folder
  create check-username-unique/route.ts in api and complete it and check using postman
 
  create verify-code/route.ts in api
+ complete it
+
+
+ ---
+
+ Lect 8: Message API with aggregation pipeline
+
+ create accept-messages/route.ts in api
+ create get-messages/route.ts in api
+
+ aggregation pipeline: ye sorting and all krke op deta useful where large data need to access
+
+ create send-message/route.ts in api
 
 
