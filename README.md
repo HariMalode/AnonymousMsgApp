@@ -99,6 +99,8 @@ complete option.ts and route.ts in nextauth folder
  lect 7 : unique username check in nextjs
 
  npm install @react-email/components
+ create check-username-unique/route.ts in api and complete it and check using postman
 
+ create verify-code/route.ts in api
 
 
