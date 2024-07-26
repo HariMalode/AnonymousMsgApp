@@ -116,4 +116,13 @@ complete option.ts and route.ts in nextauth folder
 
  create send-message/route.ts in api
 
+ ---
+
+ LECT 9 : Integrating AI features in NextJS project
+
+ goto: https://sdk.vercel.ai/docs/introduction
+
+ npm install ai @ai-sdk/openai zod, npm i ai openai
+ create suggest-messages/route.ts in api
+
 
