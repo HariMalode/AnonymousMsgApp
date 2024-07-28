@@ -173,4 +173,12 @@ page->frontend(tsx)
 
 -----
 
+Lect 11: OTP verification in NextJS
+
+create src/app/(auth)/verify/[username]/page.tsx
+
+as we are taking http://localhost:3000/?username=hari_malode as a link 
+so it is dynamic, need to create [] folder in src/app/(auth)/verify/
+
+
 
