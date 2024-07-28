@@ -125,4 +125,52 @@ complete option.ts and route.ts in nextauth folder
  npm install ai @ai-sdk/openai zod, npm i ai openai
  create suggest-messages/route.ts in api
 
+---
+
+Lect 10 : React hook form, shadcn and debouncing
+
+Backend almost complete, Backend-> api folder all files
+now starting frontend, isme frontend and back ek sat hi rahta
+
+Using Shadcn now, WHAT IS SHADCN?
+shadcn is a library provides readymade component
+
+https://ui.shadcn.com/docs/components/pagination
+
+run npx shadcn-ui@latest init
+ye lib folder already h ume utils.ts and other files krke init krta
+
+explain react hook form.
+
+multiple input field ho to prefer react hook form
+form k har field ko lag state me manage krna hota h
+ react provides featues to manage all state in one object, har field k liye alg state nahi
+
+ add form in our project
+npx shadcn-ui@latest add form
+it creates components/ui folder for tsx files
+
+npm i axios to send req
+
+now https://usehooks-ts.com/introduction
+npm install usehooks-ts
+
+usehooks debounce k liye, jb backend s data bar bar fetch krna ho to check username, kuch to gap rkte sec ka, in input field change hone p nahi , kuch delay k bad dta fetch
+
+npx shadcn-ui@latest add toast
+// toaster is a component which is used to show message to user
+Add the Toaster component in app/layout.tsx , body k andar insert kro
+
+jaha use krna vah const { toast } = useToast() ye kro
+
+npx shadcn-ui@latest add input
+
+
+create src/app/(auth)/sign-up/page.tsx
+route->backend(ts)
+page->frontend(tsx)
+
+
+-----
+
 
