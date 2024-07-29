@@ -181,4 +181,20 @@ as we are taking http://localhost:3000/?username=hari_malode as a link
 so it is dynamic, need to create [] folder in src/app/(auth)/verify/
 
 
+---
+
+lect 12: Handling signin with AuthJS
+
+create src/app/(auth)/sign-in/page.tsx
+complete it and check user able to sign in or not
+backend for this src/app/api/auth/[...nextauth]/options.ts
+
+ create src/app/(app)/dashboard/page.tsx
+
+ delete .next folder, ye caching folder h
+ now move layout and page in src/app/(app)
+
+
+ layout is main page, vo dashoboard me ab sue kr skte
+
 
