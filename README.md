@@ -198,3 +198,24 @@ backend for this src/app/api/auth/[...nextauth]/options.ts
  layout is main page, vo dashoboard me ab sue kr skte
 
 
+ create src/app/u/[username]/page.tsx
+
+
+lect 13: Navbar and message card with bug fixes in Nextjs
+
+
+npx shadcn-ui@latest add card
+npx shadcn-ui@latest add alert-dialog
+
+create src/components/Navbar.tsx
+create src/components/MessageCard.tsx
+
+dayjs
+
+Lect 14: Building User Dashboard
+
+
+npx shadcn-ui@latest add separator
+npx shadcn-ui@latest add switch
+
+
