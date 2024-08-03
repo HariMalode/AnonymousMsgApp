@@ -22,11 +22,12 @@ import { useToast } from '@/components/ui/use-toast';
 import { ApiResponse } from '@/types/ApiResponse';
 
 type MessageCardProps = {
+  // key: string;
   message: Message;
   onMessageDelete: (messageId: string) => void;
 };
 
-export function MessageCard({ message, onMessageDelete }: MessageCardProps) {
+export function MessageCard({  message, onMessageDelete }: MessageCardProps) {
   const { toast } = useToast();
 
   const handleDeleteConfirm = async () => {
@@ -38,7 +39,7 @@ export function MessageCard({ message, onMessageDelete }: MessageCardProps) {
         title: response.data.message,
       });
 
-      onMessageDelete(message._id);
+      onMessageDelete(message.id);
 
     } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>;

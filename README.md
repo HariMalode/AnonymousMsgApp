@@ -218,4 +218,16 @@ Lect 14: Building User Dashboard
 npx shadcn-ui@latest add separator
 npx shadcn-ui@latest add switch
 
+---
+
+
+lect15 Struggle with Carousel shadcn in NextJS
+
+ab jo page.tsx hmne app se lekar dashboard me laya tha use update kro 
+
+npx shadcn-ui@latest add carousel
+npm install embla-carousel-react --save
+npm i embla-carousel-autoplay
+
+
 
