@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import dayjs from 'dayjs';
 import { X } from 'lucide-react';
-// import { Message } from '@/model/User';
+import { Message } from '@/model/User';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   AlertDialog,
@@ -21,12 +21,10 @@ import { Button } from './ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { ApiResponse } from '@/types/ApiResponse';
 
-interface Message {
-  _id: string;
-  content: string;
-  createdAt: Date;
-  // other properties
-}
+// interface Message {
+  
+//   // other properties
+// }
 
 
 type MessageCardProps = {
