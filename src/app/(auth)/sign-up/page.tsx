@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button";
 import { set } from "mongoose";
 
 
-const page =() =>{
+const Page =() =>{
     const [ username, setUsername ] = useState("")
     const [ usernameMessage, setUsernameMessage ] = useState("")
     const [ isCheckingUsername, setIsCheckingUsername] = useState(false)
@@ -196,4 +196,4 @@ const page =() =>{
     )
 }
 
-export default page
+export default Page
