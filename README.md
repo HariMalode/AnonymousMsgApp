@@ -235,5 +235,13 @@ npm i embla-carousel-autoplay
 
 Lect16  assignment
 
+Frontend - send msg done AND suggestion of questions done
+created question.json in suggest-msg folder and api of suggesting msg
+sending msg functionality u/[username]\page.tsx completed
+
+Lect 17 delete route backend
+
+create src/app/api/delete-message/[messageid]
+
 
 
