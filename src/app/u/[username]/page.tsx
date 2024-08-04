@@ -49,7 +49,9 @@ export default function SendMessages() {
         try {
             const response = await axios.get('/api/suggest-messages');
             if (response) {
-                setSuggestedMessages(response.data.messages);
+                await setSuggestedMessages(response.data.messages);
+                console.log("Res:",response.data.messages);
+                console.log("Suggested:" , suggestedMessages);
             }
 
             toast({
