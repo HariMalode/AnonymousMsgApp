@@ -23,7 +23,7 @@ export async function GET(request: Request) {
     //return obj , new way
 
     try{
-        // const user = await UserModel.findById(userId);
+        const myUser = await UserModel.findById(userId);
         const user = await UserModel.aggregate([
             //aggregation pipeline
             { $match : { _id : userId } },
@@ -34,8 +34,16 @@ export async function GET(request: Request) {
                 messages : { $push : "$messages" }
             } }
         ]).exec();
+        // console.log("Myuser:",myUser)
+        // console.log("user:",user)
 
-        if(!user || user.length === 0){
+        // if(!user || user.length === 0){
+        //     return Response.json(
+        //         { success: false, message: "User not found" },
+        //         { status: 404 }
+        //     );
+        // }
+        if(!myUser){
             return Response.json(
                 { success: false, message: "User not found" },
                 { status: 404 }
@@ -43,7 +51,8 @@ export async function GET(request: Request) {
         }
 
         return Response.json(
-            {messages: user[0].messages},
+            // {messages: user[0].messages},
+            {messages: myUser.messages},
             { status: 200 }
         );
     } catch (error) {

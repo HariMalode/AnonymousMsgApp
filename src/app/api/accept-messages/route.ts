@@ -14,6 +14,7 @@ export async function POST(request: Request) {
 
   const user: User = session?.user; //optionally
 
+  // console.log("USER:", user)
   if (!session || !session.user) {
     return Response.json(
       { success: false, message: "Not authenticated" },
@@ -24,14 +25,18 @@ export async function POST(request: Request) {
   const userId = user._id;
   const { acceptMessages } = await request.json();
 
+  // console.log("userId:",userId)
+  // console.log("acceptMessages:",acceptMessages)
+
   try {
     // Updating Users Msg acceptance status
 
     const updatedUser = await UserModel.findByIdAndUpdate(
       userId,
-      { isAcceptingMessages: acceptMessages },
+      { isAcceptingMessage: acceptMessages },
       { new: true }
     );
+    console.log("updatedUser:", updatedUser)
 
     if (!updatedUser) {
       //User Not found
