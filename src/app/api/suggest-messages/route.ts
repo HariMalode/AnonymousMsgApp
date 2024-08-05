@@ -40,8 +40,6 @@
 
 
 
-
-
 import { NextResponse } from 'next/server';
 import questions from './questions.json';
 
@@ -51,17 +49,17 @@ export async function GET(request: Request) {
         const totalQuestions = questions.sampleQuestions.length;
         let messages = [];
 
-        // Create a copy of the questions array to shuffle
-        const shuffledQuestions = [...questions.sampleQuestions];
-
-        // Shuffle the array
-        for (let i = totalQuestions - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffledQuestions[i], shuffledQuestions[j]] = [shuffledQuestions[j], shuffledQuestions[i]];
+        // Pick three random unique indices
+        let randomIndices = new Set();
+        while (randomIndices.size < questionsPerPage) {
+            let randomIndex = Math.floor(Math.random() * totalQuestions);
+            randomIndices.add(randomIndex);
         }
 
-        // Take the first 'questionsPerPage' questions from the shuffled array
-        messages = shuffledQuestions.slice(0, questionsPerPage);
+        // Get questions at the random indices
+        randomIndices.forEach(index => {
+            messages.push(questions.sampleQuestions[index]);
+        });
 
         return NextResponse.json(
             { messages: messages },
