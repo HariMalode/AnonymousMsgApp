@@ -48,9 +48,11 @@ export default function SendMessages() {
         setLoading(true);
         try {
             const response = await axios.get('/api/suggest-messages');
+            const msg = await response.data.messages;
+
             if (response) {
-                await setSuggestedMessages(response.data.messages);
-                console.log("Res:",response.data.messages);
+                await setSuggestedMessages(msg);
+                console.log("Response:",msg);
                 console.log("Suggested:" , suggestedMessages);
             }
 

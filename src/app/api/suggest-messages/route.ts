@@ -38,19 +38,18 @@
 // }
 
 
-
-
 import { NextResponse } from 'next/server';
 import questions from './questions.json';
 
+// Assuming sampleQuestions is an array of strings
 export async function GET(request: Request) {
     try {
         const questionsPerPage = 3;
         const totalQuestions = questions.sampleQuestions.length;
-        let messages = [];
+        let messages: string[] = [];
 
         // Pick three random unique indices
-        let randomIndices = new Set();
+        let randomIndices = new Set<number>();
         while (randomIndices.size < questionsPerPage) {
             let randomIndex = Math.floor(Math.random() * totalQuestions);
             randomIndices.add(randomIndex);
@@ -61,10 +60,16 @@ export async function GET(request: Request) {
             messages.push(questions.sampleQuestions[index]);
         });
 
-        return NextResponse.json(
+        // Create the response
+        const response = NextResponse.json(
             { messages: messages },
             { status: 200 }
         );
+
+        // Set Cache-Control headers to prevent caching
+        response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+
+        return response;
     } catch (error) {
         console.error("Error while getting messages", error);
         return NextResponse.json(
