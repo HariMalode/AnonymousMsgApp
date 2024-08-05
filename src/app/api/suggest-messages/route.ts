@@ -42,11 +42,8 @@
 
 
 
- 
 import { NextResponse } from 'next/server';
 import questions from './questions.json';
-
-let currentIndex = 0; // You might want to persist this value in a database or a file for a real application
 
 export async function GET(request: Request) {
     try {
@@ -54,19 +51,17 @@ export async function GET(request: Request) {
         const totalQuestions = questions.sampleQuestions.length;
         let messages = [];
 
-        // Check if adding questionsPerPage exceeds the total number of questions
-        if (currentIndex + questionsPerPage > totalQuestions) {
-            // If it exceeds, take the remaining questions from the end and the rest from the beginning
-            messages = [
-                ...questions.sampleQuestions.slice(currentIndex, totalQuestions),
-                ...questions.sampleQuestions.slice(0, (currentIndex + questionsPerPage) % totalQuestions)
-            ];
-        } else {
-            messages = questions.sampleQuestions.slice(currentIndex, currentIndex + questionsPerPage);
+        // Create a copy of the questions array to shuffle
+        const shuffledQuestions = [...questions.sampleQuestions];
+
+        // Shuffle the array
+        for (let i = totalQuestions - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledQuestions[i], shuffledQuestions[j]] = [shuffledQuestions[j], shuffledQuestions[i]];
         }
 
-        // Update the index to point to the next set of questions
-        currentIndex = (currentIndex + questionsPerPage) % totalQuestions;
+        // Take the first 'questionsPerPage' questions from the shuffled array
+        messages = shuffledQuestions.slice(0, questionsPerPage);
 
         return NextResponse.json(
             { messages: messages },
@@ -80,4 +75,3 @@ export async function GET(request: Request) {
         );
     }
 }
-

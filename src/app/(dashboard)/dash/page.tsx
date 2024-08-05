@@ -43,6 +43,7 @@ function UserDashboard (){
       // const response = await axios.get<ApiResponse>(`/api/messages/accept-messages?username=${session?.user.username}`)
 
       const response = await axios.get<ApiResponse>(`/api/accept-messages`);
+
       setValue('acceptMessages', response.data.isAcceptingMessages);
 
     }catch(error){
@@ -65,11 +66,12 @@ function UserDashboard (){
     setIsLoading(false)
     try{
       const response = await axios.get<ApiResponse>('/api/get-messages')
-      setMessages(response.data.messages || []);
+      const resdata = await response.data.messages;
+      setMessages(resdata || []);
 
       if(refresh){
         toast({
-          title: 'Refresed Messages',
+          title: 'Refreshed Messages',
           description: 'Showing latest messages',
         })
       }
